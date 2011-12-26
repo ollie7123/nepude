@@ -30,12 +30,12 @@ sIFR.activate(kevinandamanda);
 // This block of code changes the Date. If you want to use the default Blogger font for your Date, delete these lines:
       
 sIFR.replace(kevinandamanda, {
-     selector: 'h2.date-header',
+     selector: '#footer-wrapper h2',
      fitExactly: false,
      tuneHeight: -5,
-     css: ['.sIFR-root { color: #000000; font-size: 20px; }',
-		'a { text-decoration: none; color: #000000;}',
-		'a:hover { color: #000000;}'
+     css: ['.sIFR-root { color: #ffffff; font-size: 20px; }',
+		'a { text-decoration: none; color: #ffffff;}',
+		'a:hover { color: #ffffff;}'
 		],
   wmode: 'transparent',
   ratios: [6, 1.93, 10, 1.92, 13, 1.86, 17, 1.82, 21, 1.8, 29, 1.79, 32, 1.78, 33, 1.77, 36, 1.78, 43, 1.77, 44, 1.76, 47, 1.77, 70, 1.76, 71, 1.75, 74, 1.76, 75, 1.75, 76, 1.76, 1.75]
