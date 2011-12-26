@@ -3,7 +3,7 @@
 // WARNING: Do NOT delete the quotes around the font URL. This is a very common typo and your fonts won't show up if you delete them. Only change USERNAME to your hostwebs.com username and FONTNAME to the name of the font you uploaded. 
 
 var kevinandamanda = {
-     src: 'http://nepude.googlecode.com/files/exo2.swf'
+     src: 'http://nepude.comuv.com/font/exo2.swf'
      };
 
 sIFR.activate(kevinandamanda);
