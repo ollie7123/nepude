@@ -33,7 +33,7 @@ sIFR.replace(kevinandamanda, {
      selector: '#footer-wrapper h2',
      fitExactly: false,
      tuneHeight: -5,
-     css: ['.sIFR-root { color: #ffffff; font-size: 20px; }',
+     css: ['.sIFR-root { color: #ffffff; font-size: 28px; }',
 		'a { text-decoration: none; color: #ffffff;}',
 		'a:hover { color: #ffffff;}'
 		],
