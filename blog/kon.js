@@ -11,9 +11,3 @@ document.write('<iframe src="http://www.emailmeform.com/builder/form/t9Xl4bh9n2d
 document.write('</div>');
 if(t == 1)
 	document.write('<a href="#kontactr-form" rel="facebox">'+ctxt+'</a>');
-else if(t == 2)
-	document.write('<a href="#kontactr-form" rel="facebox"><img src="http://kontactr.com/pics/small.gif" alt="Contact me" /></a>');
-else if(t == 3)
-	document.write('<a href="#kontactr-form" rel="facebox"><img src="http://kontactr.com/pics/big.gif" alt="Contact me" /></a>');
-else
-	document.write('<a href="#kontactr-form" rel="facebox">Contact Me</a>');
