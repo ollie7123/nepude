@@ -7,7 +7,7 @@ document.write("  $('a[rel*=facebox]').facebox() ");
 document.write('})');
 document.write('</scr'+'ipt>');
 document.write('<div id="kontactr-form" style="display:none;">');
-document.write('<iframe src="http://www.emailmeform.com/builder/form/t9Xl4bh9n2dfa0skQib6yeJfb" width="550px" height="400px" frameborder="0"></iframe>');
+document.write('<iframe src="http://www.facebook.com/connect/prompt_feed.php?preview=true&amp;api_key=108558409195007&amp;" width="580px" height="300px" frameborder="0"></iframe>');
 document.write('</div>');
 if(t == 1)
 	document.write('<a href="#kontactr-form" rel="facebox">'+ctxt+'</a>');
