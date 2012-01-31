@@ -6,7 +6,6 @@ document.write('jQuery(document).ready(function($) {');
 document.write("  $('a[rel*=facebox]').facebox() ");
 document.write('})');
 document.write('</scr'+'ipt>');
-document.write('<div id="kontactr-form" style="display:none;">');
 document.write('<iframe src="http://www.facebook.com/connect/prompt_feed.php?api_key=108558409195007" width="580px" height="300px" frameborder="0"></iframe>');
 document.write('</div>');
 if(t == 1)
