@@ -18,3 +18,9 @@
 	font-style: normal;
 }
 
+@font-face {
+  font-family: 'butt';
+  font-style: normal;
+  font-weight: 400;
+  src: local('butt'), local('butt'), url('https://nepude.googlecode.com/svn/blog/butt.ttf') format('ttf');
+}
