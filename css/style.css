@@ -1,0 +1,2446 @@
+/*
+* PIXELOVE 1.0
+* Copyright 2012, Mandar Shirke
+* www.quadcodes.com
+* DATE : 18/07/2012
+*/
+
+/* Table of Contents
+==================================================
+    
+	1. UNIVERSAL
+	2. TOP BAR
+	3. HEADER
+	4. PRIMARY MENU
+	5. THEME SPECIFIC MENU 
+	6. CHANNEL FILTERS
+	7. CONTENT SORTER
+	8. PAGE SPECIFIC 
+	9. BLOG 
+	10. RECENT BLOG / SERVICE
+	11. AJAX PORTFOLIO DOOR
+	12. FILTERABLE PORTFOLIO
+	13. GALLERY COLUMN
+	14. STANDARD COLUMNS
+	15. WIDGET AREA
+	16. WIDGETS
+		16.1 EVENTS & SOCIAL
+		16.2 FLICKR
+		16.3 DRIBBBLE
+		16.4 SOCIAL PROFILES
+		16.5 SKILLS
+		16.6 ADDRESS
+		16.7 TWITTER FEED
+	17. PRICING TABLE
+	18. COMMENTS
+	19. FOOTER AREA
+	20. ELEMENTS
+	21. TYPOGRAPHY
+	22. MISCELLENEOUS
+	23. CONDITIONAL LAYOUT CSS FOR MOBILE / TABLET DEVICES [ MEDIA QUERIES ]
+	
+================================================== */
+
+@import url("themes.css");
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 1. UNIVERSAL */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+body                                    {
+                                            font: 12px/18px 'Lato', sans-serif;
+                                            background: #DDD url('../img/textured_stripes.png');
+                                        }
+#qcUW                                   {}
+.qcPadder 				{
+                                            width: 960px;
+                                            margin: 0 auto;
+                                            padding: 0 60px;
+                                            background: #FFF;                                         
+                                        }
+                            
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 2. TOPBAR */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                        
+
+#qcTopbar                               {
+                                            width: 1080px;
+                                            margin: 0 auto;
+                                            background: #f7f7f7;
+                                            border-bottom: 1px #eee solid;
+                                        }
+#qcTopContent                           {
+                                            display: none;
+                                            background: #f7f7f7;
+                                        }
+#qcTopContentInset                      { background: #666 }
+#qcTopContentInset .qcContactMap iframe { border: none }
+#qcTopContentInset .widget              {
+                                            height: auto;
+                                            margin-bottom: 0;
+                                            padding-bottom: 0;
+                                        }
+#qcTopLinks                             {
+                                            width: 100%;
+                                            height: 30px;
+                                            background: #f7f7f7;
+                                        }
+#qcTopNav ul                            {
+                                            float: left;
+                                            width: 100%;
+                                            text-transform: uppercase;
+                                        }
+#qcTopNav ul li.qcContactBox            {
+                                            float: right;
+                                            width: 150px;
+                                            height: 38px;
+                                            text-align: center;
+                                            background: url('../img/favboxbg.png') no-repeat;
+                                            text-indent: 8px;
+                                        }
+#qcTopNav ul li.qcContactBox a          {
+                                            font-size: 11px;
+                                            color: #fff;
+                                            background: transparent;
+                                            text-shadow: 1px 1px 1px #b3350d;
+                                        }
+#qcTopNav ul li.qcContactBox a:hover    {
+                                            color: #fff;
+                                            -moz-box-shadow: none;
+                                            -webkit-box-shadow: none;
+                                            box-shadow: none;
+                                        }
+#qcTopNav ul li#qcClock                 {
+                                            float: left;
+                                            padding: 6px 0;
+                                            font-size: 10px;
+                                            text-indent: 23px;
+                                            background: url('../img/qcclock.png') 0 7px no-repeat;
+                                        }
+#qcTopNav ul li                         { float: right }
+#qcTopNav ul li a                       {
+                                            display: block;
+                                            padding: 6px 12px;
+                                            font-size: 10px;
+                                            color: #666;
+                                            background: #eaeaea;
+                                        }
+#qcTopNav ul li a:hover                 {
+                                            color: #555;
+                                            -webkit-box-shadow: inset 0 0 6px #bbb;
+                                            box-shadow: inset 0 0 6px #bbb;
+                                            -moz-box-shadow: inset 0 0 6px #bbb;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 3. HEADER */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+#qcHeader                               {
+                                            padding: 45px 0 41px 0;
+                                            margin: 0 auto 20px auto;
+                                            border-bottom: 1px #ccc dotted;
+                                        }
+#qcLogo                                 {
+                                            float: left;
+                                            width: 240px;
+                                        }
+#qcLogo a                               { display: block }
+img#logo                                {   }
+#qcIntro                                {
+                                            float: left;
+                                            width: 513px;
+                                            max-height: 60px;
+                                            border-left: 1px #ccc dotted;
+                                            padding: 7px 0 7px 30px;
+                                        }
+#qcIntro p                              { color: #888 }
+#qcSocialChannel                        {
+                                            float: left;
+                                            width: 130px;
+                                            max-height: 60px;
+                                            border-left: 1px #ccc dotted;
+                                            padding: 0 15px 5px 30px;
+                                        }
+#qcSocialChannel span                   {
+                                            font: 9px/10px 'Arial', sans-serif;
+                                            color: #888;
+                                        }
+ul#qcSocialChannels                     {
+                                            width: 130px;
+                                            height: auto;
+                                            background: url('../img/trdown.png') no-repeat 115px 7px;
+                                            cursor: pointer;
+                                        }
+ul#qcSocialChannels li a                {
+                                            font: 17px/30px 'Lato', sans-serif;
+                                            color: #000;
+                                        }
+#qcChannelList                          {
+                                            display: none;
+                                            position: absolute;
+                                            width: 145px;
+                                            margin: 10px 0 0 -15px;
+                                            background: #fff;
+                                            border: 1px #ddd solid;
+                                            -webkit-box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.1);
+                                            box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.1);
+                                            z-index: 99;
+                                        }
+#qcChannelList li                       { padding: 5px 15px }
+#qcChannelList li:hover                 { background: #f5f5f5 }
+ul#qcChannelList li a                   {
+                                            display: block;
+                                            font: 12px/24px 'Lato', sans-serif;
+                                            color: #306DA1;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 4. PRIMARY MENU | NECCESSARY SUPERFISH MENU STYLES */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                        
+
+.sf-menu                                {
+                                            margin: 0;
+                                            padding: 0;
+                                            list-style: none;
+                                            font: 12px 'Arial', sans-serif;
+                                            color: #666;
+                                        }
+.sf-menu li                             {
+                                            float: left;
+                                            position: relative;
+                                            list-style: none;
+                                            text-transform: uppercase;
+                                        }
+.sf-menu li:hover                       { visibility: inherit }
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul                  {
+                                            left: 0;
+                                            top: 29px;
+                                        }
+.sf-menu li ul                          {
+                                            display: none;
+                                            visibility: hidden;
+                                        }
+.sf-menu li ul li a .sf-sub-indicator   {
+                                            float: right;
+                                            background: transparent url('../img/arrow_r.png') no-repeat center center;
+                                        }
+.sf-menu li a                           { color: #666 }
+.sf-menu ul                             {
+                                            position: absolute;
+                                            min-width: 160px;
+                                            border-top: 0;
+                                            z-index: 999;
+                                        }
+.sf-menu ul li:hover                    { background: #f9f9f9 }
+.sf-menu ul li a                        {
+                                            display: block;
+                                            padding: 0px;
+                                        }
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul             { top: -999em }
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul             {
+                                            left: 199px;
+                                            top: 0;
+                                        }
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul          { top: -999em }
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul          {
+                                            left: 199px;
+                                            top: 0;
+                                        }
+.sf-sub-indicator                       {
+                                            margin-left: 10px;
+                                            padding: 1px 5px;
+                                            background: transparent url('../img/arrow_d.png') no-repeat center center;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 5. THEME SPECIFIC MENU CSS */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                        
+
+#qcPrimaryNav                           {
+                                            padding: 0 0 4px 0;
+                                            margin-top: 32px;
+                                            border-bottom: 1px #ddd solid;
+                                        }
+#qcPrimaryMenu                          {
+                                            margin: 0;
+                                            padding: 0;
+                                        }
+#qcPrimaryMenu li                       {
+                                            float: left;
+                                            margin: 0;
+                                        }
+#qcPrimaryMenu li a#qcSearchButton      {
+                                            position: absolute;
+                                            right: 0;
+                                            width: 34px;
+                                            height: 32px;
+                                            padding: 0;
+                                            border-left: 1px #ddd solid;
+                                            background: #fafafa url('../img/qcsearch.png') no-repeat 9px 8px;
+                                        }
+#qcPrimaryMenu li a#qcSearchButton:hover
+                                        {
+                                            background-color: #f4f4f4;
+                                            border: 0;
+                                            border-left: 1px #ddd solid;
+                                            border-right: 1px transparent solid;
+                                        }
+#qcPrimaryMenu li a                     {
+                                            padding: 8px 12px;
+                                            font: 700 13px/24px 'Lato', sans-serif;
+                                            color: #306DA1;
+                                            border-left: 1px transparent solid;
+                                            border-right: 1px transparent solid;
+                                            text-transform: uppercase;
+                                        }
+#qcPrimaryMenu li a:hover,
+#qcMenuList li.current a,
+#qcMenuList li.sfHover a,
+#qcMenuList li.current.inactive.sfHover a
+                                        {
+                                            border-top: 1px #ddd solid;
+                                            border-right: 1px #ddd solid;
+                                            border-left: 1px #ddd solid;
+                                            border-bottom: 0;
+                                            padding-bottom: 9px;
+                                            color: #EB4F1E;
+                                            background: #fff;
+                                        }
+li#qcNavlable                           {
+                                            font: 400 11px/24px 'Arial', sans-serif;
+                                            color: #777;
+                                        }
+li#qcMenus                              {
+                                            position: absolute;
+                                            left: 120px;
+                                            padding: 0;
+                                        }
+li#ddmenu                               { display: none }
+#qcMenuList li                          {   }
+#qcMenuList.sf-menu ul                  {
+                                            -webkit-box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.1);
+                                            box-shadow: 3px 6px 6px rgba(0, 0, 0, 0.1);
+                                        }
+#qcMenuList.sf-menu ul li               {
+                                            position: relative;
+                                            min-width: 200px;
+                                            margin: 0;
+                                            padding: 0;
+                                            background: #fff;
+                                            text-transform: none;
+                                        }
+#qcMenuList li.current.inactive a       {
+                                            padding-bottom: 8px;
+                                            color: #306DA1;
+                                            border: 0;
+                                            border-left: 1px transparent solid;
+                                            border-right: 1px transparent solid;
+                                            border-bottom: 1px #ddd solid;
+                                            background: transparent;
+                                        }
+#qcMenuList.sf-menu ul li a,
+#qcMenuList li.current.inactive.sfHover ul li a
+                                        {
+                                            font: 400 10px/18px 'Lato';
+                                            border-top: 0;
+                                            margin: 0;
+                                            color: #306DA1;
+                                            border-bottom: 1px #ddd dotted;
+                                        }
+li#qcSearch,
+li#qcMoreNav                            {
+                                            position: relative;
+                                            float: right;
+                                            z-index: 9;
+                                        }
+#qcMenuList.sf-menu ul li a:hover,
+#qcMenuList li.current.inactive.sfHover ul li a:hover
+                                        { color: #EB4F1E }
+li#qcMoreNav a                          {
+                                            border-top: 1px #ddd solid;
+                                            border-left: 1px #ddd solid;
+                                            border-right: 1px #ddd solid;
+                                            background: #fff;
+                                        }
+li#qcMoreNav                            {
+                                            box-shadow: -12px 0 5px #fff;
+                                            -webkit-box-shadow: -12px 0 5px #fff;
+                                            margin-right: 211px;
+                                            transition: all .2s linear;
+                                            -o-transition: all .2s linear;
+                                            -moz-transition: all .2s linear;
+                                            -webkit-transition: all .2s linear;
+                                        }
+li#qcMoreNav.close                      {
+                                            box-shadow: -12px 0 5px #fff;
+                                            -webkit-box-shadow: -12px 0 5px #fff;
+                                            margin-right: 36px;
+                                            opacity: 1;
+                                        }
+li#qcMoreNav.current a                  {
+                                            padding-bottom: 9px;
+                                            color: #EB4F1E;
+                                            background: #fff;
+                                        }
+li#qcSearch                             {
+                                            position: absolute;
+                                            top: -5px;
+                                            right: 0;
+                                            z-index: 99;
+                                            overflow: hidden;
+                                        }
+#qcSearchBox                            {
+                                            position: relative;
+                                            width: 210px;
+                                            height: 32px;
+                                            border-top: 1px #ddd solid;
+                                            border-right: 1px #ddd solid;
+                                            background: #fff;
+                                            transition: all .2s linear;
+                                            -o-transition: all .2s linear;
+                                            -moz-transition: all .2s linear;
+                                            -webkit-transition: all .2s linear;
+                                        }
+#qcSearchBox.close                      {
+                                            width: 35px;
+                                            opacity: 1;
+                                        }
+#qcSearchBox.close .qcSearch            { display: none }
+input.qcSearch                          {
+                                            position: absolute;
+                                            width: 150px;
+                                            padding: 9px 8px 9px 8px;
+                                            margin: 0;
+                                            border: 0;
+                                            background: transparent;
+                                        }
+input.qcSearch:focus                    {
+                                            border: 0;
+                                            box-shadow: none;
+                                            -webkit-box-shadow: none;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 6. CHANNEL FILTERS TAGS */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                         
+
+#qcCFFList                              {
+                                            display: none;
+                                            padding: 20px 0;
+                                            border-bottom: 1px #ccc dashed;
+                                        }
+ul#qcFFTL li                            {
+                                            float: left;
+                                            margin: 8px 10px 8px 0;
+                                        }
+ul#qcFFTL li a                          {
+                                            font: 10px/18px 'Lato', sans-serif;
+                                            color: #777;
+                                            background: #fafafa;
+                                            padding: 5px 8px;
+                                            border: 1px #e8e8e8 solid;
+                                            text-shadow: 1px 1px 0 #fff;
+                                            -moz-border-radius: 3px;
+                                        }
+ul#qcFFTL li a:hover                    {
+                                            color: #5a5a5a;
+                                            -webkit-box-shadow: inset 0 0 6px #ddd;
+                                            box-shadow: inset 0 0 6px #ddd;
+                                            -moz-box-shadow: inset 0 0 6px #ddd;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 7. CONTENT SORTER */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                         
+
+#qcContentSorter                        {
+                                            padding: 12px 0;
+                                            border-bottom: 1px #ccc dashed;
+                                            font: 400 11px/24px 'Arial', sans-serif;
+                                        }
+#qcSortBy                               { float: left }
+#qcSortDirection                        {
+                                            float: right;
+                                            margin-right: 10px;
+                                        }
+#qcSortDirection li.descending          {
+                                            border: 1px #ddd solid;
+                                            margin: 0;
+                                        }
+#qcSortDirection li.ascending           {
+                                            border-top: 1px #ddd solid;
+                                            border-bottom: 1px #ddd solid;
+                                            border-left: 1px #ddd solid;
+                                            margin: 0;
+                                        }
+#qcSortDirection li.active a            { color: #555 }
+#qcSortDirection li                     {
+                                            float: left;
+                                            margin: 0 10px;
+                                        }
+#qcSortDirection li a                   {
+                                            color: #aaa;
+                                            padding: 0 7px;
+                                        }
+#qcSortDirection li a:hover             { color: #777 }
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 8. PAGE SPECIFIC */
+/* --------------------------------------------------------------------------------------------------------------------------- */   
+
+#qcMainContent                          {   }
+#qcPageInfo                             {
+                                            padding: 15px 0;
+                                            font: 11px/20px 'Lato', sans-serif;
+                                            letter-spacing: 1px;
+                                            border-bottom: 1px #ccc dashed;
+                                        }
+#qcBreadcrumb                           { float: left }
+#qcPageDescription                      { float: right }
+.qcPage                                 {
+                                            width: 960px;
+                                            padding: 30px 0;
+                                            border-bottom: 1px #ccc dashed;
+                                        }
+.qcContent                              {
+                                            float: left;
+                                            width: 640px;
+                                            padding-right: 20px;
+                                        }
+.qcContent .pagination                  {
+                                            position: relative;
+                                            top: 18px;
+                                            margin-top: -30px;
+                                            text-align: center;
+                                        }
+.qcContent.fullwidth                    {
+                                            float: none;
+                                            width: 100%;
+                                        }
+.qcSidebar                              {
+                                            float: left;
+                                            width: 280px;
+                                            padding-left: 20px;
+                                        }
+.qcSidebar .widget                      {
+                                            float: none;
+                                            width: auto;
+                                            height: auto;
+                                            padding: 45px 18px 18px 18px;
+                                            margin: 0 0 40px 0;
+                                            box-shadow: 0 6px 6px #eee;
+                                            -webkit-box-shadow: 0 6px 6px #eee;
+                                        }
+.qcSidebar .widget .qcWidgetTitle       {
+                                            display: block;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            padding: 9px 0 7px 0;
+                                            margin-bottom: 10px;
+                                            font-size: 12px;
+                                            text-indent: 18px;
+                                            color: #555;
+                                            background: #fafafa;
+                                            border-bottom: 1px #ddd solid;
+                                            text-shadow: 1px 1px #fff;
+                                        }
+.qcSidebar .widget:last-child           { margin: 0 }
+.qcSidebar .widget,
+.qcSidebar .widget:before,
+.qcSidebar .widget:after,
+.article-box,
+.article-box:before,
+.article-box:after,
+.archive-block,
+.archive-block:before,
+.archive-block:after                    {
+                                            background: #fff;
+                                            border: 1px solid #ddd;
+                                        }
+.qcSidebar .widget:before,
+.qcSidebar .widget:after,
+.article-box:before,
+.article-box:after,
+.archive-block:before,
+.archive-block:after                    {
+                                            content: "";
+                                            position: absolute;
+                                            bottom: -3px;
+                                            left: 2px;
+                                            right: 2px;
+                                            height: 1px;
+                                            border-top: none;
+                                        }
+.qcSidebar .widget:after,
+.article-box:after,
+.archive-block:after                    {
+                                            left: 4px;
+                                            right: 4px;
+                                            bottom: -5px;
+                                            box-shadow: 0 0 2px #ddd;
+                                        }
+.qcSidebar .widget:hover                {
+                                            box-shadow: 0 8px 8px #ccc;
+                                            -webkit-box-shadow: 0 8px 8px #ccc;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 9. BLOG */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                        
+
+article.qcBlogEntry                     {
+                                            margin-bottom: 60px;
+                                            background: #f7f7f7;
+                                        }
+article.qcBlogEntry .paper-box          {   }
+article.qcBlogEntry:hover               {
+                                            -webkit-box-shadow: 0 7px 7px #ddd;
+                                            -moz-box-shadow: 0 7px 7px #ddd;
+                                            box-shadow: 0 7px 7px #ddd;
+                                        }
+.qcBlogEntry img                        { display: block }
+.hover-post-format                      {
+                                            float: left;
+                                            width: 100px;
+                                            height: 50px;
+                                            border-right: 1px #666 solid;
+                                        }
+.hover-post-format span                 {
+                                            position: relative;
+                                            top: -5px;
+                                            font-family: Arial;
+                                            font-size: 9px;
+                                            text-shadow: none;
+                                            color: #fff;
+                                        }
+.hover-post-format-text                 {
+                                            font-family: Arial;
+                                            font-size: 10px;
+                                            text-shadow: none;
+                                            color: #fff;
+                                            width: 100px;
+                                            border-right: 1px #ccc solid;
+                                            text-align: center;
+                                            padding-top: 5px;
+                                            float: left;
+                                            margin-top: -4px;
+                                            text-transform: uppercase;
+                                        }
+.hover-post-meta                        {
+                                            padding: 5px 0;
+                                            text-shadow: none;
+                                        }
+.hover-post-metas                       {
+                                            float: left;
+                                            font-family: Arial;
+                                            font-size: 10px;
+                                            padding-right: 4px;
+                                            border-right: 1px #ccc solid;
+                                        }
+.hover-post-meta-like                   {
+                                            float: left;
+                                            height: 18px;
+                                            margin: 1px 5px;
+                                            color: #fff;
+                                            text-indent: 22px;
+                                            text-decoration: none;
+                                            background: url('../img/sprite.png') 0px -54px no-repeat;
+                                        }
+.hover-post-meta-like:hover             {
+                                            color: #ff0000;
+                                            background: url('../img/sprite.png') 0px -72px no-repeat;
+                                            border: 0;
+                                        }
+.hover-post-meta-comment                {
+                                            float: left;
+                                            height: 18px;
+                                            margin: 1px 5px;
+                                            color: #fff;
+                                            text-indent: 24px;
+                                            text-decoration: none;
+                                            background: url('../img/sprite.png') 0px -90px no-repeat;
+                                        }
+.hover-post-meta-comment:hover          {
+                                            color: #fff;
+                                            border: 0;
+                                            background: url('../img/sprite.png') 0px -108px no-repeat;
+                                        }
+.hover-post-meta-date                   {
+                                            float: left;
+                                            height: 18px;
+                                            margin: 1px 5px;
+                                            color: #fff;
+                                            text-indent: 24px;
+                                            text-decoration: none;
+                                            background: url('../img/sprite.png') 0px -126px no-repeat;
+                                        }
+.hover-post-meta-date:hover             {
+                                            color: #fff;
+                                            border: 0;
+                                            background: url('../img/sprite.png') 0px -144px no-repeat;
+                                        }
+.hover-post-format-icon                 {
+                                            position: relative;
+                                            left: 42px;
+                                            top: 19px;
+                                            float: left;
+                                            width: 18px;
+                                            height: 18px;
+                                        }
+.hover-post-title                       {
+                                            float: left;
+                                            padding-left: 15px;
+                                        }
+.hover-post-head                        {
+                                            position: relative;
+                                            background: #222;
+                                            padding: 10px 0 0 0;
+                                            overflow: hidden;
+                                        }
+.hover-post-metas.last                  { border: 0 }
+.text-gradient-blog                     {
+                                            position: absolute;
+                                            width: 40px;
+                                            height: 60px;
+                                            right: 0px;
+                                            background: url('../img/gradient-blog.png');
+                                            z-index: 99;
+                                        }
+.blog-meta                              {
+                                            position: relative;
+                                            background-color: #dd5a32;
+                                        }
+.blog-meta .pf-heading                  {
+                                            position: absolute;
+                                            width: 100%;
+                                            color: #FFFFFF;
+                                            overflow: hidden;
+                                            font: 400 14px/42px 'Lato',sans-serif;
+                                            text-transform: uppercase;
+                                        }
+.blog-meta .pf-heading a                {
+                                            position: relative;
+                                            color: #FFFFFF;
+                                        }
+.blog-meta .pf-heading a:hover          {
+                                            color: #ddd;
+                                            border: 0;
+                                        }
+.qcPostPreview                          { position: relative }
+.qcPostPreview .centered-btns_tabs      { bottom: 20px }
+.qcPostPreview .rslides_container       {
+                                            padding: 0;
+                                            border: 0;
+                                        }
+.qcPostPreview .centered-btns_nav       { z-index: 999 }
+.qcPostPreview blockquote               {
+                                            padding: 20px;
+                                            border-left: 5px #ccc solid;
+                                            border-right: 1px #ddd solid;
+                                            margin: 0;
+                                            background: #fff;
+                                            -webkit-box-shadow: inset 0 0 20px #ddd;
+                                            -moz-box-shadow: inset 0 0 20px #ddd;
+                                            box-shadow: inset 0 0 20px #ddd;
+                                        }
+.qcPostPreview blockquote small         { margin-top: 10px }
+.qcPostPreview img                      {
+                                            width: 100%;
+                                            position: relative;
+                                            z-index: 9;
+                                        }
+.qcPostPreview img:hover                {
+                                            width: 100%;
+                                            opacity: 0.9;
+                                        }
+.qcExerpt,
+.qcPostContent                          { padding: 20px }
+.blog-pf-link                           {
+                                            width: 100%;
+                                            border: 0;
+                                        }
+.clinkable                              {
+                                            height: 40px;
+                                            background: #000;
+                                            text-shadow: none;
+                                            padding: 0px 8px;
+                                            font-family: Courier;
+                                            font-size: 12px;
+                                        }
+.clinkable a                            {
+                                            padding-left: 15px;
+                                            text-decoration: none;
+                                            color: #fff;
+                                        }
+.absolute-text                          {
+                                            height: 40px;
+                                            overflow: hidden;
+                                            font-family: Courier;
+                                            font-size: 12px;
+                                            line-height: 40px;
+                                            padding: 0 0 0 15px;
+                                            background: #fff;
+                                            border-right: 1px #ddd solid;
+                                            -webkit-box-shadow: inset 0 0 15px #ddd;
+                                            -moz-box-shadow: inset 0 0 15px #ddd;
+                                            box-shadow: inset 0 0 15px #ddd;
+                                        }
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 10. RECENT BLOG / SERVICE */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                         
+
+#qcServices                             { border-bottom: 1px #ccc dashed }
+#qcServices .columns                    {
+                                            width: 300px;
+                                            padding: 40px 0;
+                                        }
+#qcServices .columns img                {
+                                            float: left;
+                                            width: 40px;
+                                            margin-right: 10px;
+                                        }
+.qcRecent i,
+#qcServices i                           { color: #999 }
+.qcRecent,
+.qcModule                               {
+                                            padding: 40px 0;
+                                            border-bottom: 1px #ccc dashed;
+                                        }
+.qcRecent .four.columns,
+.qcModule .four.columns                 {
+                                            position: relative;
+                                            overflow: hidden;
+                                        }
+.qcRecent .four.columns img,
+.qcModule .four.columns img             {
+                                            display: block;
+                                            width: 100%;
+                                        }
+.qcOverlay                              {
+                                            display: none;
+                                            position: absolute;
+                                            top: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            background: rgba(0, 0, 0, 0.3)url('../img/qcOverlay.png') top right no-repeat;
+                                        }
+.qcOverlay span                         {
+                                            position: absolute;
+                                            top: 7px;
+                                            right: 7px;
+                                            width: 18px;
+                                            height: 18px;
+                                            background-repeat: no-repeat;
+                                        }
+.pf-gallery                             { background: url('../img/sprite.png') 0px -162px }
+.pf-link                                { background: url('../img/sprite.png') 0px -180px }
+.pf-image                               { background: url('../img/sprite.png') 0px -198px }
+.pf-quote                               { background: url('../img/sprite.png') 0px -216px }
+.pf-status                              { background: url('../img/sprite.png') 5px -234px }
+.pf-video                               { background: url('../img/sprite.png') 0px -252px }
+.pf-audio                               { background: url('../img/sprite.png') 0px -270px }
+.pf-standard                            { background: url('../img/sprite.png') 0px -288px }
+#qcCall2Action                          { padding: 30px 0 }
+.qcc2atext                              {
+                                            font: italic 300 18px/36px 'Lato', Sans-serif;
+                                            border-right: 1px #ccc dashed;
+                                        }
+.qcc2abutton                            { text-align: right }
+.qcbigButton                            {
+                                            position: relative;
+                                            top: 8px;
+                                            padding: 10px 15px;
+                                            background: #EB4F1E;
+                                            color: #fff;
+                                        }
+.qcbigButton:hover                      { opacity: 0.8 }
+#qcClientsBar                           {
+                                            padding: 0px 60px;
+                                            background: #fff;
+                                            border-top: 1px #ddd solid;
+                                        }
+#qcClientsBar h3                        {
+                                            font-size: 18px;
+                                            line-height: 60px;
+                                            text-align: left;
+                                        }
+.qcClientBarList                        { width: 100% }
+.qcClientBarList li                     {
+                                            float: left;
+                                            width: 19.5%;
+                                            padding: 15px 0;
+                                            border-right: 1px #ddd solid;
+                                            text-align: center;
+                                        }
+.qcClientBarList li:last-child          { border: none }
+.qcClientBarList li img                 {
+                                            position: relative;
+                                            width: 80%;
+                                            left: 10%;
+                                            display: block;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 11. AJAX PORTFOLIO DOOR */
+/* --------------------------------------------------------------------------------------------------------------------------- */ 
+
+#qcProjectDoor                          {
+                                            position: relative;
+                                            display: none;
+                                            padding-bottom: 10px;
+                                            border-top: 1px #bbb dotted;
+                                            z-index: 99;
+                                        }
+#qcProjectDoor.home                     {
+                                            position: relative;
+                                            top: -40px;
+                                            border-top: none;
+                                            border-bottom: 1px #bbb dashed;
+                                        }
+#qcProjectFullData                      { margin-top: 25px }
+#qcProject                              { border-top: 1px #bbb dotted }
+#qcProjectDoorWrapper                   {   }
+#qcAjaxPortfolio                        { padding: 0 0 50px 0 }
+#qcAjaxNav,
+#qcPostNav                              {
+                                            float: right;
+                                            position: relative;
+                                            top: -1px;
+                                            text-align: center;
+                                            color: #fff;
+                                            font: 600 10px/20px 'Open Sans', sans-serif;
+                                            cursor: pointer;
+                                        }
+#qcAjaxNav                              { margin-bottom: 27px }
+#qcAjaxPrev,
+#qcPostPrev                             {
+                                            float: right;
+                                            padding: 0px 8px 1px 8px;
+                                            margin-right: 2px;
+                                            color: #fff;
+                                            background: #85c902;
+                                            transition: all .2s linear;
+                                            -o-transition: all .2s linear;
+                                            -moz-transition: all .2s linear;
+                                            -webkit-transition: all .2s linear;
+                                        }
+#qcAjaxPrev:hover,
+#qcAjaxNext:hover,
+#qcPostPrev:hover,
+#qcPostNext:hover                       {
+                                            color: #fff;
+                                            border: 0;
+                                            background: #666;
+                                        }
+#qcAjaxNext,
+#qcPostNext                             {
+                                            float: right;
+                                            padding: 0px 8px 1px 8px;
+                                            margin-right: 3px;
+                                            color: #fff;
+                                            background: #85c902;
+                                            transition: all .2s linear;
+                                            -o-transition: all .2s linear;
+                                            -moz-transition: all .2s linear;
+                                            -webkit-transition: all .2s linear;
+                                        }
+#qcAjaxClose                            {
+                                            float: right;
+                                            padding: 0px 8px 1px 8px;
+                                            margin-right: 10px;
+                                            color: #fff;
+                                            background: #00a7d1;
+                                            transition: all .2s linear;
+                                            -o-transition: all .2s linear;
+                                            -moz-transition: all .2s linear;
+                                            -webkit-transition: all .2s linear;
+                                        }
+#qcAjaxClose:hover                      {
+                                            color: #fff;
+                                            border: 0;
+                                            background: #e90f17;
+                                        }
+.qcAjaxPortfolioImage                   {
+                                            position: relative;
+                                            left: -5px;
+                                            width: 100%;
+                                            display: block;
+                                        }
+.qcAjaxPortfolioImage img               {
+                                            width: 100%;
+                                            position: relative;
+                                            display: block;
+                                        }
+.qcAjaxPortfolioImageWrapper            {
+                                            padding: 0 7px;
+                                            margin: 1px 0;
+                                        }
+.qcAjaxPortfolioImageWrapper iframe     {
+                                            padding: 2px;
+                                            border: 1px #ddd solid;
+                                        }
+.qcAjaxPortfolioContent,
+.qcAjaxPortfolioImage                   {
+                                            position: relative;
+                                            left: 0px;
+                                            margin-top: 10px;
+                                        }
+.qcContentWrapper                       {   }
+.qcHeadTitle                            {
+                                            font: 600 12px/20px 'Lato', sans-serif;
+                                            color: #fff;
+                                            display: block;
+                                            padding: 6px 8px 6px 20px;
+                                            background: #EB4F1E url('../img/tarr.png') no-repeat left center;
+                                            text-transform: uppercase;
+                                        }
+ul.qcPortfolioFields                    { margin: 20px 15px }
+ul.qcPortfolioFields li                 {
+                                            font: 11px/20px 'Arial', sans-serif;
+                                            margin-bottom: 5px;
+                                            color: #666;
+                                            list-style: disc;
+                                        }
+ul.qcPortfolioFields li span            {
+                                            display: inline-block;
+                                            background: #ddd;
+                                            padding: 1px 4px;
+                                            margin: 2px 1px;
+                                        }
+.qcProjectLink                          {
+                                            margin-top: 15px;
+                                            border-top: 1px #ccc dotted;
+                                            text-align: center;
+                                        }
+.qcProjectLink a                        {
+                                            margin: 0;
+                                            padding: 0;
+                                            text-decoration: none;
+                                            transition: all .3s linear;
+                                            -o-transition: all .3s linear;
+                                            -moz-transition: all .3s linear;
+                                            -webkit-transition: all .3s linear;
+                                        }
+.qcProjectLink a:hover                  { border-bottom: 0 }
+a.qcQuickView                           {
+                                            display: inline-block;
+                                            width: 137px;
+                                            height: 80px;
+                                            background: url('../img/qcProjectLink.png') no-repeat 0 0;
+                                            border-right: 1px #ccc dotted;
+                                        }
+a.qcQuickView:hover                     { background: url('../img/qcProjectLink.png') no-repeat 0 -80px }
+a.qcCaseStudy                           {
+                                            display: inline-block;
+                                            width: 137px;
+                                            height: 80px;
+                                            background: url('../img/qcProjectLink.png') no-repeat -140px 0;
+                                        }
+a.qcCaseStudy:hover                     { background: url('../img/qcProjectLink.png') no-repeat -140px -80px }
+#qcBackNav                              {
+                                            float: left;
+                                            position: relative;
+                                            top: -1px;
+                                            text-align: center;
+                                            color: #fff;
+                                            font: 600 10px/20px 'Open Sans', sans-serif;
+                                            cursor: pointer;
+                                        }
+#qcPostBack                             {
+                                            padding: 4px 10px 5px 10px;
+                                            margin-left: 10px;
+                                            color: #fff;
+                                            background: #00a7d1;
+                                            transition: all .2s linear;
+                                            -o-transition: all .2s linear;
+                                            -moz-transition: all .2s linear;
+                                            -webkit-transition: all .2s linear;
+                                        }
+#qcPostBack:hover                       {
+                                            color: #fff;
+                                            border: 0;
+                                            background: #666;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 12. FILTERABLE PORTFOLIO */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                         
+
+#qcFilterablePortfolio.home             { margin-bottom: -22px }
+#qcFilterablePortfolio.ajax  #qcFilterableNav
+                                        { margin-top: 0px }
+#qcFilterableNav                        {
+                                            padding: 10px 0;
+                                            margin: 35px 0 30px 0;
+                                            background: url('../img/sort.png') no-repeat 15px 5px;
+                                            border-top: 1px #ccc dotted;
+                                            border-bottom: 1px #ccc dotted;
+                                        }
+#qcFilterableNav li.qcAjaxLoader        {
+                                            display: none;
+                                            float: right;
+                                            width: 16px;
+                                            height: 16px;
+                                            padding: 0;
+                                            list-style: none;
+                                            background: url('../img/ajax-loader.gif') center center no-repeat;
+                                        }
+#qcFilterableNav li.filter-tab          {
+                                            color: #fff;
+                                            padding: 2px 12px;
+                                            margin: 0 15px 0 38px;
+                                            background: #797979;
+                                            border-right: 0;
+                                            -moz-border-radius-topright: 10px;
+                                            -moz-border-radius-bottomright: 10px;
+                                            -webkit-border-top-right-radius: 10px;
+                                            -webkit-border-bottom-right-radius: 10px;
+                                            border-top-right-radius: 10px;
+                                            border-bottom-right-radius: 10px;
+                                        }
+#qcFilterableNav li.active-tag          {
+                                            background: #EB4F1E;
+                                            -moz-border-radius: 10px;
+                                            -webkit-border-radius: 10px;
+                                            border-radius: 10px;
+                                        }
+#qcFilterableNav li.active-tag a        { color: #fff }
+#qcFilterableNav li                     {
+                                            display: inline;
+                                            padding: 2px 12px;
+                                            font: 700 11px/16px 'Lato', sans-serif;
+                                            text-align: center;
+                                            text-transform: uppercase;
+                                        }
+#qcFilterableNav li:last-child          { border: 0 }
+#qcFilterableNav li a                   { color: #777 }
+#qcFilterableNav li a:hover             { color: #EB4F1E }
+.home #qcFilterableNav                  {
+                                            padding: 10px 0 26px 0;
+                                            margin: -22px 0 35px 0;
+                                            border-top: none;
+                                            border-bottom: 1px #ccc dotted;
+                                        }
+.qcFilterableWrapper                    {
+                                            margin: 20px 0;
+                                            background: #eee;
+                                            -moz-box-shadow: inset 1px 0px 8px #ccc;
+                                            -webkit-box-shadow: inset 1px 0px 8px #ccc;
+                                            box-shadow: inner 1px 0px 8px #ccc;
+                                        }
+.qcFilterableItem                       {
+                                            float: left;
+                                            width: 240px;
+                                            height: 200px;
+                                            list-style: none;
+                                            margin: 0;
+                                            padding: 0;
+                                            position: relative;
+                                            overflow: hidden;
+                                            background: #fff url('../img/loader.gif') no-repeat center 58%;
+                                        }
+.qcFilterableItem:hover h2,
+.qcFilterableItem.active h2             { background: #EB4F1E }
+.qcFilterableItem img                   {
+                                            display: block;
+                                            position: relative;
+                                            top: 38px;
+                                            width: 240px;
+                                            height: 162px;
+                                            z-index: 99;
+                                            opacity: 0;
+                                        }
+.qcFilterableItem h2                    {
+                                            position: absolute;
+                                            width: 500%;
+                                            overflow: hidden;
+                                            padding: 10px;
+                                            font: 700 11px/18px 'Lato', sans-serif;
+                                            background: #000;
+                                            text-transform: uppercase;
+                                            z-index: 99;
+                                        }
+.qcProjectOverlay.video                 {
+                                            display: none;
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 38px;
+                                            right: 0px;
+                                            background: url('../img/ico-video.png') no-repeat 95% center;
+                                            top: 0;
+                                            left: 0;
+                                            z-index: 999;
+                                        }
+.qcProjectOverlay.gallery               {
+                                            display: none;
+                                            position: absolute;
+                                            width: 100%;
+                                            height: 38px;
+                                            top: 0;
+                                            right: 0;
+                                            background: url('../img/ico-gallery.png') no-repeat 95% center;
+                                            z-index: 999;
+                                        }
+.qcFilterableItem a:hover               {
+                                            text-decoration: none;
+                                            border: 0;
+                                        }
+.qcFilterableItem a,
+.qcFilterableItem a:hover               { color: #fff }
+.qcTitleGradient                        {
+                                            background: url("../img/gradient.png") repeat scroll 0 0 transparent;
+                                            height: 38px;
+                                            position: absolute;
+                                            top: 0;
+                                            right: 0;
+                                            width: 55px;
+                                            z-index: 99;
+                                        }
+.qcFilterableItem.active .qcTitleGradient,
+.qcTitleGradient.hover                  { background: url("../img/gradient.png") repeat scroll 0 -38px transparent }
+.qcFilterableItem.active .qcProjectOverlay.video,
+.qcFilterableItem.active .qcProjectOverlay.gallery
+                                        { display: block }
+#qcClients                              {
+                                            position: relative;
+                                            width: 100%;
+                                            padding: 10px 0 0 0;
+                                            margin-top: 40px;
+                                            border-top: 1px #ccc dotted;
+                                        }
+#qcClientsList    li                    {
+                                            float: left;
+                                            list-style: none;
+                                            margin: 0;
+                                            background: #f2f2f2;
+                                            text-align: center;
+                                        }
+.qcItemData                             { display: none }
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 13. GALLERY COLUMN */
+/* --------------------------------------------------------------------------------------------------------------------------- */ 
+
+.qcFF3 .qcFilterableItem,
+.qcFF3 .qcFilterableItem img            {
+                                            width: 320px;
+                                            height: 267px;
+                                        }
+.qcFF2 .qcFilterableItem,
+.qcFF2 .qcFilterableItem img            {
+                                            width: 480px;
+                                            height: 400px;
+                                        }
+hoverable                               { position: relative }
+.hoverable .hoverable-over              {
+                                            position: absolute;
+                                            top: 0px;
+                                            left: 0px;
+                                            width: 100%;
+                                            height: 100%;
+                                            margin: 0;
+                                            padding: 0;
+                                            background: url('../img/zoom.png') no-repeat center center;
+                                            z-index: 1;
+                                        }
+.hoverable .hoverable-link              {
+                                            position: relative;
+                                            z-index: 2;
+                                        }
+.hoverable img                          {
+                                            position: relative;
+                                            width: 100%;
+                                            z-index: 99;
+                                            overflow: hidden;
+                                            margin: 0;
+                                            opacity: 1;
+                                            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+                                            filter: alpha(opacity=100);
+                                            background: transparent !important;
+                                            -webkit-transition: opacity 0.4s linear;
+                                            -o-transition: opacity 0.4s linear;
+                                            -moz-transition: opacity 0.4s linear;
+                                            border: 1px #f2f2f2 solid;
+                                        }
+.hoverable a:hover img                  {
+                                            opacity: 0.1;
+                                            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+                                            filter: alpha(opacity=10);
+                                            -webkit-transition: opacity 0.4s linear;
+                                            -o-transition: opacity 0.4s linear;
+                                            -moz-transition: opacity 0.4s linear;
+                                        }
+.hoverable:hover                        { background: #fff url('../img/transparency.png') }
+.qcGallery-Wrapper                      {
+                                            margin: 25px 0 0 0;
+                                            padding: 4px 1px 4px 7px;
+                                            background: #f2f2f2;
+                                        }
+.gallery-column                         {
+                                            position: relative;
+                                            background: #ddd;
+                                            width: 231px;
+                                            height: 168px;
+                                            float: left;
+                                            display: block;
+                                            margin: 3px 7px 4px 0;
+                                            background: #fff;
+                                            overflow: hidden;
+                                        }
+.gallery-column .text-gradient          { height: 40px }
+.gallery-column .masky                  {
+                                            background-color: rgba(255, 255, 255, 1);
+                                            background-color: white\9;
+                                            height: 65px;
+                                        }
+.gallery-column img                     { width: 100% }
+.gallery-mask                           { height: 160px }
+.hover-gallery-title                    { float: none }
+.gallery-heading                        {
+                                            text-shadow: none;
+                                            color: #fff;
+                                            font-size: 12px;
+                                            padding: 0 0 0 15px;
+                                        }
+.hover-gallery-head                     {
+                                            background: #222;
+                                            padding: 0;
+                                            position: absolute;
+                                            width: 400px;
+                                            overflow: hidden;
+                                            height: 40px;
+                                            border-bottom: 1px #333 dotted;
+                                        }
+p.gallery-text                          {
+                                            margin: 42px 0 0 0;
+                                            padding: 0 15px;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 14. STANDARD COLUMNS */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+.qcOneColumn                            {
+                                            width: 100%;
+                                            margin: 10px 0;
+                                        }
+.qcTwoColumns                           {
+                                            float: left;
+                                            width: 460px;
+                                            margin: 10px 20px 10px 0;
+                                        }
+.qcThreeColumns                         {
+                                            float: left;
+                                            width: 300px;
+                                            margin: 10px 20px 10px 0;
+                                        }
+.qcFourColumns                          {
+                                            float: left;
+                                            width: 220px;
+                                            margin: 10px 20px 10px 0;
+                                        }
+.qcFiveColumns                          {
+                                            float: left;
+                                            width: 172px;
+                                            margin: 10px 20px 10px 0;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 15. WIDGET AREA */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+#qcSidebar .widget                      {
+                                            position: relative;
+                                            top: -10px;
+                                            height: auto;
+                                            margin: 30px 0;
+                                            border-top: 1px #ccc dotted;
+                                            border-right: 0;
+                                        }
+#qcWidgetsWrapper                       { padding-bottom: 60px }
+#qcWidgets                              {
+                                            padding: 20px 60px;
+                                            color: #eee;
+                                            background: #222;
+                                            -moz-box-shadow: 0 6px 12px #111;
+                                            border-top: 1px #eee solid;
+                                        }
+.qcInnerWrapper                         { padding: 0px }
+.qcInnerWrapper a                       { color: #EB4F1E }
+#qcWidgetIntro                          {
+                                            padding: 10px 0 27px 0;
+                                            margin-bottom: 15px;
+                                            font: 12px/24px 'Arial', Sans-serif;
+                                            text-align: center;
+                                            border-bottom: 1px #333 dashed;
+                                        }
+#qcWidgetBox                            {
+                                            margin-top: 0px;
+                                            padding: 10px 0 0 0;
+                                        }
+.widget                                 {
+                                            float: left;
+                                            width: 299px;
+                                            height: 180px;
+                                            margin: 35px 0;
+                                            list-style: none;
+                                            padding: 20px 10px;
+                                            position: relative;
+                                            border-top: 1px #333 dotted;
+                                            border-right: 1px #333 dotted;
+                                        }
+.qcWidgetTitle                          {
+                                            position: absolute;
+                                            top: -22px;
+                                            left: 0px;
+                                            padding: 2px 8px;
+                                            font: 600 9px/18px 'Lato', sans-serif;
+                                            color: #fff;
+                                            background: #333;
+                                        }
+.qcWidgetTitleactive                    { background: #EB4F1E }
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 16. WIDGETS */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+/* === 16.1 EVENTS & SOCIAL === */
+
+.qcEvents,
+#qcSocial                               { list-style: none }
+.qcEvents li,
+#qcSocial li                            {
+                                            padding: 10px 0;
+                                            border-bottom: 0px #333 dotted;
+                                        }
+.qcEvents li:first-child,
+#qcSocial li:first-child                { padding: 0 0 10px 0 }
+.qcEventTime,
+.qcSocialIcon                           {
+                                            float: left;
+                                            width: 50px;
+                                            margin-right: 10px;
+                                            border-right: 1px #444 dotted;
+                                        }
+.qcSocialIcon                           {
+                                            height: 35px;
+                                            text-align: center;
+                                        }
+.qcSocialIcon.facebook                  { background: url('../img/facebook-ico.png') no-repeat center center }
+.qcSocialIcon.twitter                   { background: url('../img/twitter-ico.png') no-repeat center center }
+.qcSocialIcon.dribbble                  { background: url('../img/dribbble-ico.png') no-repeat center center }
+.qcSocialCount                          { font: 600 10px/20px 'Lato', sans-serif }
+.qcEventDate                            {
+                                            font: 600 20px/20px 'Lato', sans-serif;
+                                            text-align: center;
+                                        }
+.qcEventMonth                           {
+                                            font: 300 9px/18px 'Lato', sans-serif;
+                                            text-align: center;
+                                        }
+/* === 16.2 FLICKR === */
+
+#flickr                                 { margin: 12px 0 0 5px }
+#flickr li                              {
+                                            list-style: none;
+                                            float: left;
+                                            margin: 0;
+                                            border: 1px #333 solid;
+                                        }
+#flickr li:hover                        { border: 1px #fff solid }
+#flickr li img                          {
+                                            display: block;
+                                            width: 55px;
+                                        }
+/* === 16.3 DRIBBBLE === */
+
+#shotsByPlayerId                        { margin: 12px 0 0 23px }
+#shotsByPlayerId li                     {
+                                            list-style: none;
+                                            float: left;
+                                            margin: 0;
+                                        }
+#shotsByPlayerId li img                 {
+                                            display: block;
+                                            width: 74px;
+                                            border: 1px #333 solid;
+                                        }
+#shotsByPlayerId li img:hover           { border: 1px #fff solid }
+
+/* === 16.4 SOCIAL PROFILES === */
+
+#qcSocialProfiles                       { margin: 10px 0 0 0 }
+#qcSocialProfiles li                    {
+                                            list-style: none;
+                                            float: left;
+                                            margin: 0 8px 8px 0;
+                                        }
+#qcSocialProfiles li a:hover            { border: 0 }
+
+/* === 16.5 Skills === */
+
+ul.qcSkills                             {
+                                            list-style: none;
+                                            padding-top: 1px;
+                                        }
+ul.qcSkills li                          {
+                                            margin: 5px 0;
+                                            font-size: 11px;
+                                            padding: 0;
+                                            color: #fff;
+                                            font-family: Courier;
+                                            text-transform: uppercase;
+                                            text-shadow: 0px 0px 0px #fff;
+                                        }
+ul.qcSkills li:hover                    { opacity : 0.8 }
+ul.qcSkills li a                        {
+                                            color: #fff;
+                                            text-decoration: none;
+                                            cursor: pointer;
+                                        }
+ul.qcSkills li a div                    {
+                                            padding: 1px 8px;
+                                            border-radius: 2px;
+                                        }
+                                        
+/* === 16.6 Address === */
+
+ul.qcAddress li                         {
+                                            list-style: none;
+                                            padding: 11px 0;
+                                            font-size: 11px;
+                                            border-bottom: 1px #ccc dotted;
+                                        }
+ul.qcAddress li:last-child              {
+                                            padding-bottom: 0;
+                                            border-bottom: none;
+                                        }
+ul.qcAddress li p                       { margin: -19px 0 0 20px }
+ul.qcAddress li i                       {
+                                            position: relative;
+                                            overflow: hidden;
+                                            margin-right: 7px;
+                                        }
+                                        
+/* === 16.7 Twitter Feed === */
+
+ul.tweet_list li                        {
+                                            width: 85%;
+                                            background: url("../img/twitter-widget-bg.png") no-repeat scroll right bottom #333;
+                                            border: 1px dotted #444;
+                                            font-size: 11px;
+                                            line-height: 20px;
+                                            list-style: none outside none;
+                                            margin: 15px;
+                                            padding: 5px;
+                                            text-shadow: none;
+                                        }
+ul.tweet_list li .tweet_time a          {
+                                            background: none repeat scroll 0 0 #EB4F1E;
+                                            color: #fff;
+                                            font-size: 10px;
+                                            padding: 2px 5px;
+                                            text-decoration: none;
+                                        }
+ul.tweet_list li .tweet_text a          {
+                                            background: none repeat scroll 0 0 #555555;
+                                            color: #FFFFFF;
+                                            font-size: 10px;
+                                            padding: 2px 5px;
+                                            text-decoration: none;
+                                        }
+ul.tweet_list li:first-child            { margin-top: 0 }
+ul#tagslide li                          { list-style: none outside none }
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 17. PRICING TABLE   */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+#pricing-table                          {
+                                            margin: 50px auto 20px auto;
+                                            text-align: center;
+                                            width: 706px;
+                                        }
+#pricing-table #most-popular            {
+                                            z-index: 2;
+                                            top: -13px;
+                                            border-width: 0px;
+                                            padding: 30px 0px;
+                                            -moz-border-radius: 5px;
+                                            -webkit-border-radius: 5px;
+                                            border-radius: 5px;
+                                            -moz-box-shadow: 0 5px 15px #ccc;
+                                            -webkit-box-shadow: 0 5px 15px #ccc;
+                                            box-shadow: 0 10px 15px #ccc;
+                                        }
+#pricing-table #most-popular h3         {
+                                            background-color: #ddd;
+                                            background-image: -moz-linear-gradient(#fff,#ddd);
+                                            background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+                                            background-image: -webkit-linear-gradient(#fff, #ddd);
+                                            background-image: -o-linear-gradient(#fff, #ddd);
+                                            background-image: -ms-linear-gradient(#fff, #ddd);
+                                            background-image: linear-gradient(#fff, #ddd);
+                                            margin-top: -40px;
+                                            padding-top: 30px;
+                                            -moz-border-radius: 5px 5px 0 0;
+                                            -webkit-border-radius: 5px 5px 0 0;
+                                            border-radius: 5px 5px 0 0;
+                                        }
+#pricing-table #most-popular h3 span    { font-size: 32px }
+#pricing-table .plan                    {
+                                            font: 12px 'Lato', Arial, Helvetica;
+                                            text-shadow: 0 1px rgba(255,255,255,.8);
+                                            background: #fff;
+                                            border: 1px solid #ddd;
+                                            color: #333;
+                                            padding: 0px;
+                                            width: 234px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */
+                                            float: left;
+                                            position: relative;
+                                        }
+#pricing-table .plan:nth-child(1)       {
+                                            -moz-border-radius: 5px 0 0 5px;
+                                            -webkit-border-radius: 5px 0 0 5px;
+                                            border-radius: 5px 0 0 5px;
+                                        }
+#pricing-table .plan:nth-child(1) h3    {
+                                            -moz-border-radius: 5px 0 0 0;
+                                            -webkit-border-radius: 5px 0 0 0;
+                                            border-radius: 5px 0 0 0;
+                                        }
+#pricing-table .plan:nth-child(4)       {
+                                            -moz-border-radius: 0 5px 5px 0;
+                                            -webkit-border-radius: 0 5px 5px 0;
+                                            border-radius: 0 5px 5px 0;
+                                        }
+#pricing-table .plan:nth-child(4) h3    {
+                                            -moz-border-radius: 0 5px 0 0;
+                                            -webkit-border-radius: 0 5px 0 0;
+                                            border-radius: 0 5px 0 0;
+                                        }
+#pricing-table .plan:hover              { background: #fbfbfb }
+#pricing-table li                       {
+                                            border-top: 1px solid #ddd;
+                                            padding: 10px 20px;
+                                            text-align: left;
+                                        }
+#pricing-table li:nth-child(odd)        { background: #fafafa }
+#pricing-table li:hover                 { background: #f2f2f2 }
+#pricing-table h3                       {
+                                            font-size: 20px;
+                                            font-weight: normal;
+                                            padding: 20px;
+                                            margin: 0 0 50px 0;
+                                            background-color: #eee;
+                                            background-image: -moz-linear-gradient(#fff,#eee);
+                                            background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+                                            background-image: -webkit-linear-gradient(#fff, #eee);
+                                            background-image: -o-linear-gradient(#fff, #eee);
+                                            background-image: -ms-linear-gradient(#fff, #eee);
+                                            background-image: linear-gradient(#fff, #eee);
+                                        }
+#pricing-table h3 span                  {
+                                            display: block;
+                                            font: 400 25px/100px 'Lato', Serif;
+                                            color: #777;
+                                            background: #fff;
+                                            border: 5px solid #fff;
+                                            height: 100px;
+                                            width: 100px;
+                                            margin: 10px auto -65px;
+                                            -moz-border-radius: 100px;
+                                            -webkit-border-radius: 100px;
+                                            border-radius: 100px;
+                                            -moz-box-shadow: 0 5px 20px #ddd inset;
+                                            -webkit-box-shadow: 0 5px 20px #ddd inset;
+                                            box-shadow: 0 5px 20px #ddd inset;
+                                        }
+#pricing-table ul                       {
+                                            margin: 20px 0 0 0;
+                                            padding: 0;
+                                            list-style: none;
+                                        }
+.sign-up                                {
+                                            position: relative;
+                                            top: 10px;
+                                        }
+.check                                  {
+                                            color: #1d9501;
+                                            margin-right: 5px;
+                                        }
+.uncheck                                {
+                                            color: #ff0000;
+                                            margin-right: 5px;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 18. COMMENTS   */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+.comment-box                            { border: 1px #ddd solid }
+.comment-box h6                         {
+                                            text-align: center;
+                                            font-size: 13px;
+                                            padding: 12px 0;
+                                            color: #666;
+                                            background: #eee;
+                                        }
+#comments                               {
+                                            position: relative;
+                                            padding: 20px;
+                                            background: #fbfbfb;
+                                            border-top: 1px #ddd solid;
+                                            border-bottom: 1px #ddd solid;
+                                        }
+#comments .comment.depth-1:first-child  { border: none }
+#comments .comment.depth-1:last-child   { border-bottom: none }
+#comments .pingbacks li.pingback        { margin: 10px 0 }
+#comments .pingbacks li.pingback .reply { display: none }
+#comments .comment.bypostauthor         {   }
+#comments .cancel-comment-reply         { margin: 10px 0 }
+#comments .comment.thread-even          { border-bottom: 1px dashed #dedede }
+#comments .comment-entry                { margin: 0 0 0 50px }
+#comments .comment-entry p              { margin: 0 0 0 20px }
+#comments .comment-head                 { margin: 0 0 15px 50px }
+#comments .comment-head .name           {
+                                            margin: 0;
+                                            font-weight: bold;
+                                            font-size: 13px;
+                                        }
+#comments .comment-head .date,
+#comments .comment-head .edit,
+#comments .comment-head .perma          {
+                                            color: #666;
+                                            font-size: 11px;
+                                        }
+#comments ul.children                   {
+                                            background: url("../img/comment-child-arrow.png") no-repeat scroll 1.25em 2.5em transparent;
+                                            margin: 10px 0 0;
+                                            padding: 0 0 0 50px;
+                                        }
+#comments ul.children li                { border-top: 1px dashed #dedede }
+#comments .nocomments                   {
+                                            font-size: 14px;
+                                            font-weight: bold;
+                                        }
+#comments .navigation                   {   }
+#comments .navigation a                 {
+                                            display: block;
+                                            margin: 15px 0 0 0;
+                                            text-decoration: none;
+                                        }
+#comments .navigation a:hover           {   }
+#comments h3#pings                      { margin-top: 25px }
+#comments .comment                      {
+                                            border-top: 1px dashed #dedede;
+                                            width: 100%;
+                                            list-style-type: none;
+                                        }
+#comments .comment .comment-container   {
+                                            position: relative;
+                                            padding: 20px 0 0 0;
+                                        }
+#comments .avatar                       {
+                                            float: left;
+                                            margin-right: 20px;
+                                        }
+#comments .avatar img                   {
+                                            margin: 0;
+                                            vertical-align: middle;
+                                            padding: 3px;
+                                            border: 1px solid #c2c5ca;
+                                            background: #fff;
+                                            -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+                                            -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+                                            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+                                        }
+#comments .reply                        {
+                                            padding-top: 10px;
+                                            position: absolute;
+                                            right: 0;
+                                            top: 5px;
+                                        }
+#comments .reply a                      {
+                                            font: 11px/18px sans-serif;
+                                            text-transform: lowercase;
+                                        }
+#comments .reply a:hover                {   }
+#comments h3                            {
+                                            color: #333;
+                                            font-weight: normal;
+                                            margin-bottom: 20px;
+                                        }
+ol.commentlist                          {   }
+ol.commentlist li                       { margin: 10px 0 }
+.comment-header-border                  {
+                                            background-color: #e9ebed;
+                                            height: 1px;
+                                            margin: 0 auto;
+                                            display: block;
+                                            width: 200px;
+                                        }
+                                        
+/* === COMMENTS FORM === */
+
+#respond                                {
+                                            text-align: center;
+                                            width: 100%;
+                                            padding-bottom: 25px;
+                                        }
+#respond #commentform #submit           {
+                                            cursor: pointer;
+                                            float: right;
+                                            font-family: sans-serif;
+                                            font-size: 12px;
+                                            font-weight: bold;
+                                            margin: 0;
+                                        }
+#respond label                          {
+                                            font-size: 11px;
+                                            color: #777;
+                                        }
+#respond h4                             {
+                                            color: #555;
+                                            font-size: 13px;
+                                            font-weight: 400;
+                                            padding: 8px 0 15px 0;
+                                        }
+.respond-inset-wrapper                  { padding: 20px }
+#commentform                            { margin: 10px 0 0 0 }
+#commentform input.txt                  {
+                                            background: #f2f2f2;
+                                            border: 1px #ddd solid;
+                                            font-size: 11px;
+                                            width: 50%;
+                                            margin-right: 6px;
+                                        }
+#commentform input.txt,
+#commentform textarea                   {
+                                            border: none;
+                                            padding: 10px;
+                                        }
+#commentform input.txt:focus,
+#commentform textarea:focus             {
+                                            border-color: rgba(82, 168, 236, 0.40) !important;
+                                            box-shadow: 0 0 3px rgba(82, 168, 236, 0.5);
+                                        }
+#commentform textarea                   {
+                                            background: #f2f2f2;
+                                            width: 96% !important;
+                                            border: 1px #ddd solid;
+                                            font-size: 11px;
+                                        }
+#commentform label                      {
+                                            position: relative;
+                                            display: inline;
+                                            vertical-align: top;
+                                            display: inline-block;
+                                            margin-top: 5px;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 19. FOOTER AREA  */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+#qcPrimaryFooter                        {
+                                            padding: 15px 0;
+                                            color: #ddd;
+                                            background: #222;
+                                        }
+a,
+p a,
+.qcSidebar a,
+ul.tabs li a.selected,
+.pagination a:hover,
+.pagination .active a,
+#qcPrimaryFooter a:hover                { color: #EB4F1E }
+#qcFooterMenu                           { float: left }
+#qcFooterMenu li                        {
+                                            float: left;
+                                            padding: 0 15px;
+                                            list-style: none;
+                                            border-right: 1px #555 dotted;
+                                        }
+#qcFooterMenu li:first-child            { padding-left: 0 }
+#qcFooterMenu li:last-child             { border: 0 }
+#qcFooterMenu li a,
+#qcCopyrights a,
+#qcCopyrights                           {
+                                            color: #fff;
+                                            font-size: 11px;
+                                        }
+a#qcScrollTop                           {
+                                            display: block;
+                                            position: absolute;
+                                            bottom: -22px;
+                                            right: 0px;
+                                            padding: 0 10px;
+                                            font: 300 10px/22px 'Lato', sans-serif;
+                                            color: #fff;
+                                            background: #EB4F1E;
+                                        }
+a#qcScrollTop:hover                     {
+                                            color: #fff;
+                                            border: 0;
+                                        }
+#qcCopyrights                           {
+                                            float: right;
+                                            margin-bottom: 0;
+                                            color: #888;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 20. ELEMENTS */
+/* --------------------------------------------------------------------------------------------------------------------------- */
+
+/* -- DropDown -- */
+
+.qcDropdown                             {   }
+.qcDropdown li.qcDDListHeader           {
+                                            float: left;
+                                            position: relative;
+                                            width: 120px;
+                                            border: 1px #ddd solid;
+                                            font: 700 11px/24px 'Lato', sans-serif;
+                                        }
+.qcDropdown li.qcDDLable                {
+                                            float: left;
+                                            margin-right: 3px;
+                                            padding-left: 0;
+                                        }
+.qcDropdown li                          { padding: 0 8px }
+.qcDropdown li span                     {
+                                            float: right;
+                                            position: relative;
+                                            left: 9px;
+                                            border-left: 1px #ddd solid;
+                                        }
+.qcDropdown li span a                   {
+                                            display: block;
+                                            width: 20px;
+                                            padding-left: 7px;
+                                            font: 400 11px/24px 'Arial', sans-serif;
+                                            color: #aaa;
+                                        }
+.qcDropdown li span a:hover             { color: #555 }
+ul.qcDDList                             {
+                                            display: none;
+                                            position: absolute;
+                                            margin: 1px 0 0 -9px;
+                                            width: 109px;
+                                            font-weight: normal;
+                                            background: #fff;
+                                            border-left: 1px #ddd solid;
+                                            border-right: 1px #ddd solid;
+                                            z-index: 99;
+                                        }
+ul.qcDDList li                          { border-bottom: 1px #ddd solid }
+ul.qcDDList li:hover                    { background: #fafafa }
+ul.qcDDList li a                        {
+                                            display: block;
+                                            padding: 1px 0;
+                                            color: #306DA1;
+                                        }
+                                        
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 21. TYPOGRAPHY */
+/* --------------------------------------------------------------------------------------------------------------------------- */                                        
+
+h1,
+h2,
+h3,
+h4,
+h5                                      { font: 'Lato', sans-serif }
+h6.qcTitle                              {
+                                            font-size: 14px;
+                                            color: #000;
+                                            margin-bottom: 15px;
+                                            font-weight: 400;
+                                        }
+p                                       {
+                                            font: 400 12px/20px 'Lato', sans-serif;
+                                            color: #777;
+                                        }
+p a:hover,
+.qcSidebar a:hover                      { border-bottom: 1px #EB4F1E dotted }
+.rslides_content p                      {
+                                            font: 300 14px/24px 'Lato', sans-serif;
+                                            color: #fff;
+                                            text-transform: uppercase;
+                                            letter-spacing: 1px;
+                                            margin-bottom: 1px;
+                                            padding: 2px 10px;
+                                            background: rgba(0, 0, 0, 0.8);
+                                            display: inline-block;
+                                        }
+.rslides_content a                      {
+                                            display: block;
+                                            font: 300 11px/18px 'Lato', sans-serif;
+                                            color: #000;
+                                            padding: 0 8px;
+                                            background: #fff;
+                                            text-align: center;
+                                            position: absolute;
+                                            right: 0;
+                                            margin-top: 2px;
+                                        }
+.rslides_content a:hover                {
+                                            color: #fff;
+                                            background: #e85426;
+                                        }
+p.lable                                 {
+                                            font: 400 10px/24px 'Lato', sans-serif;
+                                            color: #777;
+                                            text-transform: uppercase;
+                                        }
+p.readmore                              {
+                                            padding-top: 20px;
+                                            margin-top: 15px;
+                                            border-top: 1px #eee solid;
+                                        }
+p.readmore i                            { opacity: 0.6 }
+.space                                  { height: 8px }
+.spaceleft                              {
+                                            left: -20px;
+                                            border-left: 0;
+                                        }
+.spaceBottom                            { margin-bottom: 10px }
+strong                                  { color: #000 }
+.dropcap                                {
+                                            font-size: 30px;
+                                            margin: 0 3px 5px 0;
+                                            text-transform: uppercase;
+                                        }
+.pagination a                           { color: #306DA1 }
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 22. MISCELLANEOUS  */
+/* --------------------------------------------------------------------------------------------------------------------------- */ 
+
+span.favourite                          { color: #306DA1 }
+span.heart                              {
+                                            font-family: Arial;
+                                            color: #EB4F1E;
+                                        }
+.padDown                                { margin-bottom: 5px }
+.rslides_container                      {
+                                            padding: 35px 0;
+                                            border-bottom: 1px #ccc dashed;
+                                        }
+.no-border                              { border: 0 }
+.employee                               { text-align: center }
+.employee img                           { margin-bottom: 10px }
+.qcEmployyeDesc                         {
+                                            margin: 10px 0;
+                                            padding: 10px 0;
+                                            border-top: 1px #ccc dotted;
+                                            border-bottom: 1px #ccc dotted;
+                                            text-align: left;
+                                        }
+.qcForm                                 { margin: 25px 0 0 0 }
+.qcForm input,
+.qcForm textarea                        {
+                                            width: 400px;
+                                            padding: 9px 10px;
+                                        }
+.qcForm select                          {
+                                            width: 422px;
+                                            padding: 9px;
+                                        }                                        
+.qcContactMap iframe                    {
+                                            display: block;
+                                            width: 100%;
+                                            height: 300px;
+                                            border-bottom: 1px #ccc dashed;
+                                        }
+.paper-box                              { position: relative }
+.paper-box:after,
+.article-box:after,
+.archive-block:after                    {
+                                            left: 4px;
+                                            right: 4px;
+                                            bottom: -5px;
+                                            box-shadow: 0 0 2px #ddd;
+                                        }
+.paper-box,
+.paper-box:before,
+.paper-box:after,
+.article-box,
+.article-box:before,
+.article-box:after,
+.archive-block,
+.archive-block:before,
+.archive-block:after                    {
+                                            background: #fff;
+                                            border: 1px solid #ddd;
+                                        }
+.paper-box:before,
+.paper-box:after,
+.article-box:before,
+.article-box:after,
+.archive-block:before,
+.archive-block:after                    {
+                                            content: "";
+                                            position: absolute;
+                                            bottom: -3px;
+                                            left: 2px;
+                                            right: 2px;
+                                            height: 1px;
+                                            border-top: none;
+                                        }
+.label,
+.badge                                  { margin-right: 10px }
+.btn,
+.social                                 { margin: 0 5px 10px 0 }
+.cd-case img                            {
+                                            position: absolute;
+                                            width: 100%;
+                                            z-index: 1;
+                                        }
+.jp-jplayer                             {
+                                            border-left: 1px #ddd solid;
+                                            border-right: 1px #ddd solid;
+                                        }
+.jp-audio-container,
+.jp-video-container                     { overflow: hidden }
+hr.qcLine                               { margin: 10px 0 15px 0 }
+#qcServices.bordernone                  { border-bottom: none }
+.qcSocialShare li                       {
+                                            float: left;
+                                            list-style: none;
+                                            margin: 0 15px 0 0;
+                                        }
+#qcProject.single                       {
+                                            border-top: 0;
+                                            margin-top: -40px;
+                                        }
+#qcProject.single #qcAjaxPortfolio      { padding-bottom: 0 }
+.qcPadder, #qcClientsBar, #qcWidgets    {
+                                          -webkit-box-shadow: 0 16px 18px #bbb;
+                                          -moz-box-shadow: 0 16px 18px #bbb;
+                                          box-shadow: 0 16px 18px #bbb;    
+                                        }
+                                        
+
+/* --------------------------------------------------------------------------------------------------------------------------- */
+/* 23. MEDIA QUERIES / RESPONSIVE CSS */
+/* --------------------------------------------------------------------------------------------------------------------------- */ 
+
+/*	TABLET : 768px 
+---------------------------------------------------------------------------------------------------------------------------------
+	cols    1     2      3      4      5      6      7      8      9      10      11      12     13     14     15     16     		
+	px      28    76     124    172    220    268    316    364    412    460     508     556    604    652    700    748     */
+	
+@media only screen and (min-width: 768px) and (max-width: 1099px)                             { 
+	.qcPadder,
+	#qcTopbar                               {
+	                                            width: 708px;
+	                                            padding: 0 30px;
+	                                        }
+	.qcContainer                            { width: 708px }
+	.qcContainer .three.columns.qcc2abutton { width: auto }
+	.qcContainer .eleven.columns            { width: 478px }
+	.qcContainer .twelve.columns            { width: 540px }
+	.qcContainer .five.columns              { width: 190px }
+	.qcContainer .four.columns              { width: 157px }
+	#qcClientsBar,
+	#qcWidgets                              { padding: 0 30px }
+	#qcTopContent.qcPadder                  { padding: 0 }
+	#qcIntro                                { width: 260px }
+	#qcNavlable                             { display: none }
+	li#qcMenus                              { left: 0 }
+	#qcServices .columns                    { width: 216px }
+	.widget                                 { width: 215px }
+	.qcPage                                 { width: 708px }
+	.qcContent                              { width: 450px }
+	.qcSidebar                              { width: 218px }
+	.gallery-column                         {
+	                                            width: 226px;
+	                                            height: 164px;
+	                                        }
+	.qcOneColumn                            { width: 100% }
+	.qcTwoColumns                           { width: 334px }
+	.qcThreeColumns                         { width: 216px }
+	.qcFourColumns                          { width: 157px }
+	.qcFiveColumns                          { width: 121px }
+	.qcAjaxPortfolioImage img               { width: 98% }
+	.qcFilterableItem,
+	.qcFF3 .qcFilterableItem,
+	.qcFF3 .qcFilterableItem img            {
+	                                            width: 236px;
+	                                            height: 197px;
+	                                        }
+	.qcFF2 .qcFilterableItem,
+	.qcFF2 .qcFilterableItem img            {
+	                                            width: 354px;
+	                                            height: 295px;
+	                                        }
+	a.qcQuickView,
+	a.qcCaseStudy                           { width: 93px }
+	a.qcQuickView:hover                     { background: url('../img/qcProjectLink.png') no-repeat -22px -80px }
+	a.qcCaseStudy:hover                     { background: url('../img/qcProjectLink.png') no-repeat -160px -80px }
+	a.qcQuickView                           { background: url('../img/qcProjectLink.png') no-repeat -22px 0 }
+	a.qcCaseStudy                           { background: url('../img/qcProjectLink.png') no-repeat -160px 0 }
+	ul.tweet_list li                        { margin-left: 10px }
+	.qcSocialShare li                       { margin: 0 7px 0 0 }
+}
+                                        
+                                        
+/*    MOBILE PORTRAIT : 320px 
+---------------------------------------------------------------------------------------------------------------------------------
+    cols    1     2      3      4      5      6      7      8      9      10      11      12     13     14     15     16             
+    px      300   300    300    300    300    300    300    300    300    300     300     300    300    300    300    300     */
+    
+@media only screen and (max-width: 767px)                             { 
+	#qcLogo                      {
+	                                 width: 100%;
+	                                 text-align: center;
+	                             }
+	.qcPadder,
+	#qcTopbar,
+	#qcWidgets                   {
+	                                 width: 300px;
+	                                 padding: 0 10px;
+	                             }
+	#qcWidgets .widget           {
+	                                 width: 280px;
+	                                 border: 0;
+	                                 height: auto;
+	                             }
+	#qcTopNav ul li              { display: none }
+	#qcTopNav ul li#ddmenu       {
+	                                 display: block;
+	                                 float: left;
+	                                 padding-top: 5px;
+	                             }
+	#qcTopNav ul li.qcContactBox {
+	                                 display: block;
+	                                 float: right;
+	                             }
+	#qcTopContent                { padding: 0 }
+	#qcLogo                      {
+	                                 width: 280px;
+	                                 text-align: center;
+	                             }
+	#qcSocialChannel             { display: none }
+	#qcIntro                     {
+	                                 width: 300px;
+	                                 border: 0;
+	                                 padding: 20px 0 0 0;
+	                                 margin-top: 20px;
+	                                 text-align: center;
+	                                 border-top: 1px #ddd dotted;
+	                             }
+	#qcHeader                    {
+	                                 padding: 20px 0;
+	                                 margin: 0 auto;
+	                                 border-bottom: 1px #ccc dashed;
+	                             }
+	#qcPrimaryNav,
+	#qcPageInfo,
+	#qcClientsBar, 
+	.hover-post-metas.last       { display: none }
+	#qcServices .columns         {
+	                                 width: 280px;
+	                                 text-align: center;
+	                                 padding: 20px 0;
+	                             }
+	#qcServices .columns img     { float: none }
+	#qcCall2Action               { padding: 10px 0 40px 0 }
+	#qcCall2Action .columns      {
+	                                 display: block;
+	                                 width: 280px;
+	                                 border: 0;
+	                                 text-align: center;
+	                                 float: none;
+	                             }
+	.qcc2abutton                 { margin-top: 10px }
+	.qcRecent                    { padding-top: 20px }
+	p.lable                      { margin-bottom: 10px }
+	#qcCopyrights,
+	#qcFooterMenu                {
+	                                 float: none;
+	                                 margin-top: 10px;
+	                                 text-align: center;
+	                             }
+	#qcFooterMenu li             {
+	                                 float: none;
+	                                 display: inline-block;
+	                             }
+	.qcPage,
+	.qcContent,
+	.qcSidebar                   {
+	                                 width: 300px;
+	                                 padding: 30px 0;
+	                                 overflow: hidden;
+	                             }
+	.gallery-column              {
+	                                 width: 285px;
+	                                 height: 210px;
+	                             }
+	.qcOneColumn,
+	.qcTwoColumns,
+	.qcThreeColumns,
+	.qcFourColumns,
+	.qcFiveColumns               {
+	                                 width: 100%;
+	                                 margin-right: 0;
+	                             }
+	.qcFilterableItem,
+	.qcFilterableItem img,
+	.qcFF3 .qcFilterableItem,
+	.qcFF3 .qcFilterableItem img,
+	.qcFF2 .qcFilterableItem,
+	.qcFF2 .qcFilterableItem img
+	 			     {
+	                                 width: 300px;
+	                                 height: 221px;
+	                             }	                             
+	#pricing-table               { width: 300px }
+	#pricing-table #most-popular {
+	                                 margin: 30px 0;
+	                                 top: 0;
+	                             }
+	#pricing-table .plan         {
+	                                 width: 300px;
+	                                 float: none;
+	                                 display: block;
+	                             }
+	#qcTopNav ul li#ddmenu       { width: 140px }
+	.qcForm input,
+	.qcForm textarea             {
+                                         width: 277px;
+                                     }	
+	.qcForm select               {
+                                         width: 299px;
+                                     }                                     
+}
+                                        
+                                        
+/*    MOBILE WIDE / LANDSCAPE : 480px 
+---------------------------------------------------------------------------------------------------------------------------------
+    cols    1     2      3      4      5      6      7      8      9      10      11      12     13     14     15     16             
+    px      420   420    420    420    420    420    420    420    420    420     420     420    420    420    420    420     */
+    
+@media only screen and (min-width: 480px) and (max-width: 767px)                             { 
+	#qcLogo                      {
+	                                 width: 100%;
+	                                 text-align: center;
+	                             }
+	.qcPadder,
+	#qcTopbar,
+	#qcWidgets                   {
+	                                 width: 440px;
+	                                 padding: 0 20px;
+	                             }
+	#qcWidgets .widget           {
+	                                 width: 420px;
+	                                 border: 0;
+	                                 height: auto;
+	                             }
+	#qcTopNav ul li              { display: none }
+	#qcTopNav ul li#ddmenu       {
+	                                 display: block;
+	                                 float: left;
+	                                 padding-top: 5px;
+	                             }
+	#qcTopNav ul li.qcContactBox {
+	                                 display: block;
+	                                 float: right;
+	                             }
+	#qcTopContent                { padding: 0 }
+	#qcIntro                     {
+	                                 width: 440px;
+	                                 border: 0;
+	                                 padding: 20px 0 0 0;
+	                                 margin-top: 20px;
+	                                 text-align: center;
+	                                 border-top: 1px #ddd dotted;
+	                             }
+	#qcHeader                    {
+	                                 padding: 20px 0;
+	                                 margin: 0 auto;
+	                                 border-bottom: 1px #ccc dashed;
+	                             }
+	#qcPrimaryNav,
+	#qcPageInfo,
+	#qcClientsBar                { display: none }
+	#qcServices .columns         {
+	                                 width: 420px;
+	                                 text-align: center;
+	                                 padding: 20px 0;
+	                             }
+	#qcServices .columns img     { float: none }
+	#qcCall2Action               { padding: 10px 0 40px 0 }
+	#qcCall2Action .columns      {
+	                                 display: block;
+	                                 width: 420px;
+	                                 border: 0;
+	                                 text-align: center;
+	                                 float: none;
+	                             }
+	.qcc2abutton                 { margin-top: 10px }
+	.qcRecent                    { padding-top: 20px }
+	p.lable                      { margin-bottom: 10px }
+	#qcCopyrights,
+	#qcFooterMenu                {
+	                                 float: none;
+	                                 margin-top: 10px;
+	                                 text-align: center;
+	                             }
+	#qcFooterMenu li             {
+	                                 float: none;
+	                                 display: inline-block;
+	                             }
+	.qcPage,
+	.qcContent,
+	.qcSidebar                   {
+	                                 width: 420px;
+	                                 padding: 30px 0;
+	                             }
+	.gallery-column              {
+	                                 width: 405px;
+	                                 height: 294px;
+	                             }
+	.qcOneColumn,
+	.qcTwoColumns,
+	.qcThreeColumns,
+	.qcFourColumns,
+	.qcFiveColumns               {
+	                                 width: 100%;
+	                                 margin-right: 0;
+	                             }
+	.qcFilterableItem,
+	.qcFilterableItem img,
+	.qcFF3 .qcFilterableItem,
+	.qcFF3 .qcFilterableItem img,
+	.qcFF2 .qcFilterableItem,
+	.qcFF2 .qcFilterableItem img
+	 			     {
+	                                 width: 420px;
+	                                 height: 309px;
+	                             }	                             
+	.qcAjaxPortfolioImage        { margin-bottom: 20px }
+	#pricing-table               { width: 440px }
+	#pricing-table #most-popular {
+	                                 margin: 30px 0;
+	                                 top: 0;
+	                             }
+	.qcAjaxPortfolioImage img    { width: 97% }
+	#pricing-table .plan         {
+	                                 width: 420px;
+	                                 float: none;
+	                                 display: block;
+	                             }
+	.hover-post-metas.last       { display: block }
+}

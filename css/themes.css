@@ -1,0 +1,54 @@
+/* 
+PIXELOVE THEMES
+--------------------------
+*/
+
+/* THEME - FULLWIDTH */
+
+body.fullwidth {
+	font: 12px/18px 'Lato', sans-serif;
+	background: #fff;
+	border-top: 3px #306DA1 solid
+}                                                                               
+body.fullwidth .qcPadder {
+	background: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+body.fullwidth #qcTopbar {
+	width: 100%;
+}
+body.fullwidth #qcTopbar, body.fullwidth #qcTopLinks, body.fullwidth #qcTopContent {
+	background: #eee;
+}
+body.fullwidth #qcWidgetsWrapper {
+	background: url('../img/footer_wrapper.png');
+}
+body.fullwidth #qcClientsBar.qcPadder {
+	box-shadow: none;
+	margin-bottom: 50px;
+	border-bottom: 1px #ddd solid;
+}
+body.fullwidth #qcWidgets {
+	border-top: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none; 	
+}
+
+
+/* THEME - WOODY */
+
+body.woody {
+	background: #DDB788 url('../img/wood.jpg');
+}
+
+body.woody .qcPadder, body.woody #qcClientsBar, body.woody #qcWidgets {
+	-webkit-box-shadow: 0 16px 18px #A46F3F;
+	-moz-box-shadow: 0 16px 18px #A46F3F;
+	box-shadow: 0 16px 18px #A46F3F;    
+}
+
+
+
